@@ -96,7 +96,7 @@ uint64 sys_mprotect(void) {
     uint64 addr;
     int len;
 
-    // Llamamos a las funciones para obtener los valores de los argumentos
+
     argaddr(0, &addr);
     argint(1, &len);
 
@@ -108,17 +108,17 @@ uint64 sys_mprotect(void) {
         if (pte == 0 || (*pte & PTE_V) == 0 || (*pte & PTE_U) == 0)
             return -1;
 
-        // Desactiva el bit PTE_W para hacer la página de solo lectura
+     
         *pte &= ~PTE_W;
     }
-    return 0;  // Retorna 0 si todo está correcto
+    return 0; 
 }
 
 uint64 sys_munprotect(void) {
     uint64 addr;
     int len;
 
-    // Llamamos a las funciones para obtener los valores de los argumentos
+
     argaddr(0, &addr);
     argint(1, &len);
 
@@ -130,8 +130,7 @@ uint64 sys_munprotect(void) {
         if (pte == 0 || (*pte & PTE_V) == 0 || (*pte & PTE_U) == 0)
             return -1;
 
-        // Activa el bit PTE_W para permitir escritura
         *pte |= PTE_W;
     }
-    return 0;  // Retorna 0 si todo está correcto
+    return 0;  
 }

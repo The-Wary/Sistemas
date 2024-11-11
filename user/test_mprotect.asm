@@ -5,7 +5,9 @@ user/_test_mprotect:     file format elf64-littleriscv
 Disassembly of section .text:
 
 0000000000000000 <main>:
-#include "user.h"
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "user/user.h"
 
 int main() {
    0:	1101                	addi	sp,sp,-32
@@ -736,7 +738,7 @@ uptime:
 00000000000003ac <mprotect>:
 .global mprotect
 mprotect:
-    li a7, SYS_mprotect  
+    li a7, SYS_mprotect
  3ac:	48d9                	li	a7,22
     ecall
  3ae:	00000073          	ecall
@@ -744,6 +746,7 @@ mprotect:
  3b2:	8082                	ret
 
 00000000000003b4 <munprotect>:
+
 .global munprotect
 munprotect:
     li a7, SYS_munprotect

@@ -1,1 +1,2 @@
-user/test_mprotect.o: user/test_mprotect.c user/user.h
+user/test_mprotect.o: user/test_mprotect.c kernel/types.h kernel/stat.h \
+ user/user.h

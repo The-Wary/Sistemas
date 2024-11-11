@@ -107,9 +107,10 @@ uptime:
  ret
 .global mprotect
 mprotect:
-    li a7, SYS_mprotect  
+    li a7, SYS_mprotect
     ecall
     ret
+
 .global munprotect
 munprotect:
     li a7, SYS_munprotect

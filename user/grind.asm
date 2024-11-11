@@ -1740,7 +1740,7 @@ uptime:
 0000000000000bee <mprotect>:
 .global mprotect
 mprotect:
-    li a7, SYS_mprotect  
+    li a7, SYS_mprotect
      bee:	48d9                	li	a7,22
     ecall
      bf0:	00000073          	ecall
@@ -1748,6 +1748,7 @@ mprotect:
      bf4:	8082                	ret
 
 0000000000000bf6 <munprotect>:
+
 .global munprotect
 munprotect:
     li a7, SYS_munprotect

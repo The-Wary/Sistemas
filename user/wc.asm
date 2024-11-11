@@ -844,7 +844,7 @@ uptime:
 0000000000000466 <mprotect>:
 .global mprotect
 mprotect:
-    li a7, SYS_mprotect  
+    li a7, SYS_mprotect
  466:	48d9                	li	a7,22
     ecall
  468:	00000073          	ecall
@@ -852,6 +852,7 @@ mprotect:
  46c:	8082                	ret
 
 000000000000046e <munprotect>:
+
 .global munprotect
 munprotect:
     li a7, SYS_munprotect
